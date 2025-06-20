@@ -1,0 +1,29 @@
+<form class="needs-validation" novalidate onsubmit="return validateForm(this)">
+  <h3>Contato</h3>
+  <div class="mb-3">
+    <label class="form-label">Nome:</label>
+    <input type="text" class="form-control" required>
+    <div class="invalid-feedback">Informe seu nome.</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Telefone:</label>
+    <input type="tel" class="form-control" required pattern="\d{10,11}">
+    <div class="invalid-feedback">Informe um telefone válido (10 ou 11 dígitos).</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Mensagem:</label>
+    <textarea class="form-control" required></textarea>
+    <div class="invalid-feedback">Mensagem obrigatória.</div>
+  </div>
+  <button type="submit" class="btn btn-success">Enviar Mensagem</button>
+</form>
+<script>
+function validateForm(form) {
+  if (!form.checkValidity()) {
+    form.classList.add('was-validated');
+    return false;
+  }
+  form.outerHTML = "<p class='alert alert-info'>Mensagem enviada! Retornaremos em breve.</p>";
+  return false;
+}
+</script>

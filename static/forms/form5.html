@@ -1,0 +1,28 @@
+<form class="needs-validation" novalidate onsubmit="return validateForm(this)">
+  <h3>Pesquisa de Satisfação</h3>
+  <div class="mb-3">
+    <label class="form-label">Email:</label>
+    <input type="email" class="form-control" required>
+    <div class="invalid-feedback">Informe um email válido.</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Você recomendaria nosso site?</label>
+    <select class="form-select" required>
+      <option value="">Selecione</option>
+      <option>Sim</option>
+      <option>Não</option>
+    </select>
+    <div class="invalid-feedback">Seleção obrigatória.</div>
+  </div>
+  <button type="submit" class="btn btn-success">Enviar Resposta</button>
+</form>
+<script>
+function validateForm(form) {
+  if (!form.checkValidity()) {
+    form.classList.add('was-validated');
+    return false;
+  }
+  form.outerHTML = "<p class='alert alert-success'>Obrigado por participar da pesquisa!</p>";
+  return false;
+}
+</script>

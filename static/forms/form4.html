@@ -1,0 +1,24 @@
+<form class="needs-validation" novalidate onsubmit="return validateForm(this)">
+  <h3>Login</h3>
+  <div class="mb-3">
+    <label class="form-label">Usuário:</label>
+    <input type="text" class="form-control" required>
+    <div class="invalid-feedback">Usuário obrigatório.</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Senha:</label>
+    <input type="password" class="form-control" required>
+    <div class="invalid-feedback">Senha obrigatória.</div>
+  </div>
+  <button type="submit" class="btn btn-success">Entrar</button>
+</form>
+<script>
+function validateForm(form) {
+  if (!form.checkValidity()) {
+    form.classList.add('was-validated');
+    return false;
+  }
+  form.outerHTML = "<p class='alert alert-primary'>Login realizado com sucesso!</p>";
+  return false;
+}
+</script>

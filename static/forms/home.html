@@ -1,0 +1,22 @@
+<div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+
+      <div class="d-flex align-items-center">
+        <img src="https://arusoft.com.br/img/logo.svg" alt="Logo" height="40" class="me-2">
+      </div>
+
+      <div>
+        <button class="btn btn-outline-light me-2" hx-get="/static/forms/homecontent.html" hx-target="#view">Home</button>
+        <button class="btn btn-outline-light me-2" hx-get="/static/forms/form2.html" hx-target="#view">Contato</button>
+        <button class="btn btn-outline-light me-2" hx-get="/static/forms/form3.html" hx-target="#view">Feedback</button>
+        <button class="btn btn-outline-light" hx-get="/static/forms/form5.html" hx-target="#view">Pesquisa</button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="view">
+    <h3 class="text-light">Página Inicial</h3>
+    <p class="text-light">Bem-vindo!</p>
+  </div>
+</div>

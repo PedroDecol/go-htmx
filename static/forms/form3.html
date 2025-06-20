@@ -1,0 +1,29 @@
+<form class="needs-validation" novalidate onsubmit="return validateForm(this)">
+  <h3>Feedback</h3>
+  <div class="mb-3">
+    <label class="form-label">Nome:</label>
+    <input type="text" class="form-control" required>
+    <div class="invalid-feedback">Informe seu nome.</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Nota (1-5):</label>
+    <input type="number" class="form-control" required min="1" max="5">
+    <div class="invalid-feedback">Nota entre 1 e 5.</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Comentários:</label>
+    <textarea class="form-control" required></textarea>
+    <div class="invalid-feedback">Comentário obrigatório.</div>
+  </div>
+  <button type="submit" class="btn btn-success">Enviar Feedback</button>
+</form>
+<script>
+function validateForm(form) {
+  if (!form.checkValidity()) {
+    form.classList.add('was-validated');
+    return false;
+  }
+  form.outerHTML = "<p class='alert alert-warning'>Obrigado pelo feedback!</p>";
+  return false;
+}
+</script>
